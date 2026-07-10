@@ -1,0 +1,148 @@
+create table ridess(
+  "Date" date,
+  "Time" TIME,
+  "Booking ID" text,
+  "Booking Status" text,
+  "Customer ID" text,
+  "Vehicle Type" text,
+  "Pickup Location" text,
+  "Drop Location" text,
+  "Avg VTAT" float,
+  "Avg CTAT" float,
+  "Cancelled Rides by Customer" int,
+  "Reason for cancelling by Customer" text,
+  "Cancelled Rides by Driver" int,
+  "Driver Cancellation Reason" text,
+  "Incomplete Rides" int,
+  "Incomplete Rides Reason" text,
+  "Booking Value" int,
+  "Ride Distance" float,
+  "Driver Ratings" float,
+  "Customer Rating" float,
+  "Payment Method" text
+
+);
+
+select * from ridess
+
+--Q.1 Calculate the total number of bookings and total revenue
+select count("Booking ID") as total_booking,
+sum("Booking Value") as total_revenue
+from ridess;
+
+--Q.2 Find total rides and total revenue for each vehicle type
+select "Vehicle Type",count("Booking ID") as total_rides,
+sum("Booking Value") as total_revenue
+from ridess
+group by "Vehicle Type";
+
+
+--Q.3 Identify the top 5 customers based on total spending
+select "Customer ID",sum("Booking Value") as Total_Spending
+from ridess
+group by "Customer ID"
+order by Total_Spending desc
+limit 5
+
+--Q.4 Determine the most used payment method
+select "Payment Method",count("Booking ID") as uses_count
+from ridess
+where "Payment Method" is not null and "Payment Method" != 'Unknown'
+group by "Payment Method"
+order by uses_count desc
+
+
+--Q.5 Calculate the customer cancellation rate (%)
+select
+round(sum("Cancelled Rides by Customer")*100/count("Booking ID"),2)
+as customer_cancellation_rate from ridess
+
+
+
+--Q.6 Find the top 5 pickup locations based on total bookings
+select "Pickup Location",count("Booking ID") as total_bookings
+from ridess
+group by "Pickup Location"
+order by total_bookings desc
+limit 5
+
+--Q.7 Identify the peak booking hour (based on time)
+select extract(hour from "Time") as booking_hour,
+count(*) as total_booking
+from ridess
+group by booking_hour
+order by total_booking desc
+limit 1
+
+--Q.8 Analyze the distribution of customer cancellation reasons
+select  "Reason for cancelling by Customer",
+count(*) as total_cancellations
+from ridess
+where "Reason for cancelling by Customer"!='Unknown'
+group by "Reason for cancelling by Customer"
+order by total_cancellations
+
+--Q.9 Calculate total revenue for each pickup location
+select "Pickup Location",sum("Booking Value") as total_revenue
+from ridess
+group by "Pickup Location"
+order by total_revenue
+
+--Q.10 Count the number of rides with low ratings (customer_rating ≤ 3)
+select count(*) as no_of_rides from ridess
+where "Customer Rating" <= 3
+
+
+--Q.1 Find Top 3 Customers per City based on Total Spending
+with customer_spending as(
+  select
+   "Pickup Location",
+   "Customer ID",
+   sum("Booking Value") as total_Spending
+   from ridess
+   group by "Pickup Location","Customer ID"
+)
+select * from 
+    (select *,
+	rank() over(partition by "Pickup Location" order by total_Spending desc) as rn
+	from customer_spending
+)t
+where rn <=3
+
+--Q.2 Find Hour-wise Revenue Contribution (%)
+ select
+ extract (hour from "Time") as booking_hour,
+ sum("Booking Value") as revenue,
+ round(sum("Booking Value")*100.0/sum(sum("Booking Value")) over(),2)  as Revenue_percentage
+ from ridess
+ group by booking_hour
+ order by booking_hour ;
+
+--Q.3 Identify Customers Who Only Used One Payment Method
+select "Customer ID" from ridess
+group by "Customer ID"
+having count(distinct "Payment Method") =1
+
+--Q.4 Find Rolling 3-Ride Average Booking Value per Customer
+select 
+"Customer ID",
+"Booking ID",
+"Booking Value",
+avg("Booking Value") over (partition by "Customer ID" order by "Booking ID"
+  rows between 2 preceding and current row
+) as rolling_avg
+from ridess;
+
+--Q.5 Find Cancellation Rate per Pickup Location (with Ranking)
+with cancel_data as (
+  select 
+    "Pickup Location",
+    sum("Cancelled Rides by Customer") as cancelled,
+    count(*) as total
+  from ridess
+  group by "Pickup Location"
+)
+select *,
+round(cancelled * 100.0 / total, 2) as cancellation_rate,
+rank() over (order by cancelled * 1.0 / total desc) as rank
+from cancel_data;
