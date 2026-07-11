@@ -25,6 +25,8 @@ SELECT * FROM book;
 SELECT * FROM customers;
 SELECT * FROM orders;
 📊 SQL Analysis & Business Requests
+
+
 ##1️⃣ Retrieve All Fiction Books
 ```sql
 Business Request:
