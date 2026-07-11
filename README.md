@@ -25,12 +25,12 @@ SELECT * FROM book;
 SELECT * FROM customers;
 SELECT * FROM orders;
 📊 SQL Analysis & Business Requests
-1️⃣ Retrieve All Fiction Books
+##1️⃣ Retrieve All Fiction Books
 
 Business Request:
 Identify all books that belong to the Fiction genre.
 
-SQL Query:
+**SQL Query:**
 
 SELECT * FROM book WHERE genre = 'Fiction';
 
@@ -38,12 +38,12 @@ Output:
 <img width="755" height="190" alt="1" src="https://github.com/user-attachments/assets/f0abe7b0-3f39-44ec-8bba-37876694e951" />
 
 
-2️⃣ Books Published After 1950
+##2️⃣ Books Published After 1950
 
 Business Request:
 Retrieve books published after 1950 to analyze modern literature trends.
 
-SQL Query:
+**SQL Query:**
 
 SELECT * FROM book WHERE published_year > 1950 ORDER BY published_year;
 
@@ -51,12 +51,12 @@ Output:
 <img width="477" height="267" alt="2" src="https://github.com/user-attachments/assets/41a149b4-1479-4b35-bb0b-bf1e6b1ce36c" />
 
 
-3️⃣ Customers from Canada
+##3️⃣ Customers from Canada
 
 Business Request:
 Identify customers located in Canada.
 
-SQL Query:
+**SQL Query:**
 
 SELECT * FROM customers WHERE country = 'Canada';
 
@@ -64,12 +64,12 @@ Output:
 <img width="669" height="97" alt="image" src="https://github.com/user-attachments/assets/18b17871-f682-4d7d-b1fa-228f01d1f480" />
 
 
-4️⃣ Orders in November 2023
+##4️⃣ Orders in November 2023
 
 Business Request:
 Analyze orders placed within November 2023.
 
-SQL Query:
+**SQL Query:**
 
 SELECT * FROM orders 
 WHERE order_date BETWEEN '2023-11-01' AND '2023-11-30';
@@ -78,12 +78,12 @@ Output:
 <img width="520" height="240" alt="4" src="https://github.com/user-attachments/assets/c254f76c-9c3c-4aa5-a998-57d444e585be" />
 
 
-5️⃣ Total Book Stock
+##5️⃣ Total Book Stock
 
 Business Request:
 Calculate total inventory across all books.
 
-SQL Query:
+**SQL Query:**
 
 SELECT SUM(stock) AS total_stock FROM book;
 
@@ -92,12 +92,12 @@ total_stock
   25056
 
 
-6️⃣ Most Expensive Book
+##6️⃣ Most Expensive Book
 
 Business Request:
 Identify the highest priced book.
 
-SQL Query:
+**SQL Query:**
 
 SELECT * FROM book ORDER BY price DESC LIMIT 1;
 
@@ -106,12 +106,12 @@ Output:
 
 
 
-7️⃣ Orders with Quantity > 1
+##7️⃣ Orders with Quantity > 1
 
 Business Request:
 Find bulk purchase orders.
 
-SQL Query:
+**SQL Query:**
 
 SELECT * FROM orders WHERE quantity > 1;
 
@@ -119,12 +119,12 @@ Output:
 <img width="524" height="265" alt="image" src="https://github.com/user-attachments/assets/d4bb4281-7329-4a87-ba64-40696f3f69cd" />
 
 
-8️⃣ Orders with Amount > 200
+##8️⃣ Orders with Amount > 200
 
 Business Request:
 Identify high-value transactions.
 
-SQL Query:
+**SQL Query:**
 
 SELECT order_date, quantity, total_amount 
 FROM orders 
@@ -135,12 +135,12 @@ Output:
 
 
 
-9️⃣ Unique Genres
+##9️⃣ Unique Genres
 
 Business Request:
 List all available book genres.
 
-SQL Query:
+**SQL Query:**
 
 SELECT DISTINCT genre FROM book;
 
@@ -149,12 +149,12 @@ Output:
 
 
 
-🔟 Book with Lowest Stock
+##🔟 Book with Lowest Stock
 
 Business Request:
 Identify books with lowest inventory.
 
-SQL Query:
+**SQL Query:**
 
 SELECT book_id, title, stock 
 FROM book 
@@ -169,12 +169,12 @@ Output:
 Insight:
 This book is out of stock and requires immediate restocking.
 
-1️⃣1️⃣ Total Revenue
+##1️⃣1️⃣ Total Revenue
 
 Business Request:
 Calculate total revenue generated from all orders.
 
-SQL Query:
+**SQL Query:**
 
 SELECT SUM(total_amount) AS revenue FROM orders;
 
@@ -184,12 +184,12 @@ revenue
 
 
 
-1️⃣2️⃣ Books Sold per Genre
+##1️⃣2️⃣ Books Sold per Genre
 
 Business Request:
 Analyze sales distribution by genre.
 
-SQL Query:
+**SQL Query:**
 
 SELECT b.genre, SUM(o.quantity) AS books_sold  
 FROM orders o  
@@ -201,12 +201,12 @@ Output:
 
 
 
-1️⃣3️⃣ Average Fantasy Price
+##1️⃣3️⃣ Average Fantasy Price
 
 Business Request:
 Find average price of Fantasy books.
 
-SQL Query:
+**SQL Query:**
 
 SELECT AVG(price) FROM book WHERE genre = 'Fantasy';
 
@@ -214,12 +214,12 @@ Output:
 avg_price
   25.98
 
-1️⃣4️⃣ Repeat Customers
+##1️⃣4️⃣ Repeat Customers
 
 Business Request:
 Identify customers with multiple orders.
 
-SQL Query:
+**SQL Query:**
 
 SELECT customer_id  
 FROM orders  
@@ -231,12 +231,12 @@ Output:
 
 
 
-1️⃣5️⃣ Top 5 Most Ordered Books
+##1️⃣5️⃣ Top 5 Most Ordered Books
 
 Business Request:
 Find best-selling books.
 
-SQL Query:
+**SQL Query**
 
 SELECT b.book_id, b.title, COUNT(o.order_id) AS order_count  
 FROM orders o  
@@ -250,12 +250,12 @@ Output:
 
 
 
-1️⃣6️⃣ Top 10 Expensive Fantasy Books
+##1️⃣6️⃣ Top 10 Expensive Fantasy Books
 
 Business Request:
 Analyze premium Fantasy books.
 
-SQL Query:
+**SQL Query:**
 
 SELECT * FROM book  
 WHERE genre = 'Fantasy'  
@@ -267,12 +267,12 @@ Output:
 
 
 
-1️⃣7️⃣ Sales by Author
+##1️⃣7️⃣ Sales by Author
 
 Business Request:
 Evaluate author performance.
 
-SQL Query:
+**SQL Query:**
 
 SELECT b.author, SUM(o.quantity) AS total_quantity  
 FROM orders o  
@@ -285,12 +285,12 @@ Output:
 
 
 
-1️⃣8️⃣ High Spending Cities
+##1️⃣8️⃣ High Spending Cities
 
 Business Request:
 Identify cities with total spending above 300.
 
-SQL Query:
+**SQL Query:**
 
 SELECT c.city, SUM(o.total_amount) AS total_spend  
 FROM customers c  
@@ -303,12 +303,12 @@ Output:
 
 
 
-1️⃣9️⃣ Top Spending Customers
+##1️⃣9️⃣ Top Spending Customers
 
 Business Request:
 Identify highest spending customers.
 
-SQL Query:
+**SQL Query:**
 
 SELECT c.name, o.customer_id, SUM(o.total_amount) AS total_spend  
 FROM orders o  
@@ -322,12 +322,12 @@ Output:
 
 
 
-2️⃣0️⃣ Remaining Stock
+##2️⃣0️⃣ Remaining Stock
 
 Business Request:
 Calculate remaining inventory after sales.
 
-SQL Query:
+**SQL Query:**
 
 SELECT b.book_id, b.title,  
 COALESCE(SUM(o.quantity),0) AS order_quantity,  
