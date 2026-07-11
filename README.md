@@ -192,89 +192,117 @@ HAVING COUNT(order_id) >= 2;
 
 ---
 
-### 🔹 Q15. Top 5 Best-Selling Books
+---
+
+### 🔹 Q15. Top 5 Most Ordered Books
+
+**Business Request:**  
+Find best-selling books.
+
 ```sql
-SELECT b.title, SUM(o.quantity) AS total_sold  
+SELECT b.book_id, b.title, COUNT(o.order_id) AS order_count  
 FROM orders o  
-JOIN book b ON b.book_id = o.book_id  
-GROUP BY b.title  
-ORDER BY total_sold DESC  
+JOIN book b ON o.book_id = b.book_id  
+GROUP BY b.book_id, b.title  
+ORDER BY order_count DESC  
 LIMIT 5;
 ```
-**Output:** 
 
-<img width="474" height="145" alt="image" src="https://github.com/user-attachments/assets/d3ffdbef-b1e1-4dc4-9ba6-2e8a37b88711" />
+**Output:** 
+<img width="562" height="145" alt="image" src="https://github.com/user-attachments/assets/50dcc38b-b4c3-40af-8251-683ec3cefab1" />
 
 
 ---
 
-### 🔹 Q16. Total Orders per Customer
+### 🔹 Q16. Top 10 Expensive Fantasy Books
+
+**Business Request:**  
+Analyze premium Fantasy books.
+
 ```sql
-SELECT customer_id, COUNT(order_id) AS total_orders  
-FROM orders  
-GROUP BY customer_id;
+SELECT * FROM book  
+WHERE genre = 'Fantasy'  
+ORDER BY price DESC  
+LIMIT 10;
 ```
-**Output:** 
-<img width="181" height="265" alt="image" src="https://github.com/user-attachments/assets/c42ae423-c28f-41c3-9c89-114e087956d4" />
 
+**Output:** 
+<img width="561" height="265" alt="image" src="https://github.com/user-attachments/assets/453399fc-88dc-4066-a32e-9dd5d476d2d5" />
 
 ---
 
-### 🔹 Q17. Revenue by Genre
+### 🔹 Q17. Sales by Author
+
+**Business Request:**  
+Evaluate author performance.
+
 ```sql
-SELECT b.genre, SUM(o.total_amount) AS revenue  
+SELECT b.author, SUM(o.quantity) AS total_quantity  
 FROM orders o  
-JOIN book b ON b.book_id = o.book_id  
-GROUP BY b.genre;
-```
-**Output:** 
-<img width="161" height="193" alt="image" src="https://github.com/user-attachments/assets/2c944553-7570-4c3c-b08f-58fcb7b37080" />
-
----
-
-
-### 🔹 Q18. Most Popular Author
-```sql
-SELECT b.author, SUM(o.quantity) AS books_sold  
-FROM orders o  
-JOIN book b ON b.book_id = o.book_id  
+JOIN book b ON o.book_id = b.book_id  
 GROUP BY b.author  
-ORDER BY books_sold DESC  
-LIMIT 1;
+ORDER BY total_quantity DESC;
 ```
+
+**Output:** (Add link)
+
+---
+
+### 🔹 Q18. High Spending Cities
+
+**Business Request:**  
+Identify cities with total spending above 300.
+
+```sql
+SELECT c.city, SUM(o.total_amount) AS total_spend
+FROM customers c  
+JOIN orders o ON c.customer_id = o.customer_id  
+GROUP BY c.city  
+HAVING SUM(o.total_amount) > 300;
+```
+
 **Output:** 
-<img width="229" height="49" alt="image" src="https://github.com/user-attachments/assets/e66a553c-f871-4c3f-8251-c8e7f7577a59" />
+<img width="246" height="265" alt="image" src="https://github.com/user-attachments/assets/08f984ff-09d9-430f-be50-6cf5ae0da65c" />
 
 
 ---
 
-### 🔹 Q19. Monthly Sales Analysis
+### 🔹 Q19. Top Spending Customers
+
+**Business Request:**  
+Identify highest spending customers.
+
 ```sql
-SELECT MONTH(order_date) AS month, SUM(total_amount) AS revenue  
-FROM orders  
-GROUP BY month  
-ORDER BY month;
-```
-**Output:**
-<img width="161" height="313" alt="image" src="https://github.com/user-attachments/assets/653d8b68-7889-4958-bc14-8c20be483988" />
-
-
----
-
-### 🔹 Q20. Customers Who Spent the Most
-```sql
-SELECT c.name, SUM(o.total_amount) AS total_spent  
+SELECT c.name, o.customer_id, SUM(o.total_amount) AS total_spend  
 FROM orders o  
-JOIN customers c ON c.customer_id = o.customer_id  
-GROUP BY c.name  
-ORDER BY total_spent DESC  
-LIMIT 5;
+JOIN customers c ON o.customer_id = c.customer_id  
+GROUP BY o.customer_id, c.name  
+ORDER BY total_spend DESC  
+LIMIT 10;
 ```
-**Output:** 
-<img width="247" height="145" alt="image" src="https://github.com/user-attachments/assets/1db5794f-aceb-4e61-8e10-96a5b60dc0ed" />
 
+**Output:** 
+<img width="330" height="265" alt="image" src="https://github.com/user-attachments/assets/1ad9d253-a4ad-4845-b39a-cc8f5129170e" />
 
 
 ---
 
+### 🔹 Q20. Remaining Stock
 
+**Business Request:**  
+Calculate remaining inventory after sales.
+
+```sql
+SELECT b.book_id, b.title,  
+COALESCE(SUM(o.quantity),0) AS order_quantity,  
+b.stock - COALESCE(SUM(o.quantity),0) AS remaining_stock  
+FROM book b  
+LEFT JOIN orders o ON b.book_id = o.book_id  
+GROUP BY b.book_id, b.title, b.stock;
+```
+
+**Output:**
+<img width="774" height="289" alt="image" src="https://github.com/user-attachments/assets/749566ce-20d2-4fa2-b85e-d318c4b5f47d" />
+
+
+---
