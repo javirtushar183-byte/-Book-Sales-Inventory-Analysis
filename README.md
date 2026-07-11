@@ -215,7 +215,8 @@ FROM orders
 GROUP BY customer_id;
 ```
 **Output:** 
-<img width="831" height="265" alt="image" src="https://github.com/user-attachments/assets/f81fbdbf-c006-41b5-b276-ca710461e106" />
+<img width="181" height="265" alt="image" src="https://github.com/user-attachments/assets/c42ae423-c28f-41c3-9c89-114e087956d4" />
+
 
 ---
 
