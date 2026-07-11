@@ -244,7 +244,9 @@ GROUP BY b.author
 ORDER BY total_quantity DESC;
 ```
 
-**Output:** (Add link)
+**Output:**
+<img width="250" height="289" alt="image" src="https://github.com/user-attachments/assets/638b4365-3352-4ac0-81bb-0806ce3768ab" />
+
 
 ---
 
