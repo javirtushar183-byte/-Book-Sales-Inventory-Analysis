@@ -1,4 +1,21 @@
-# 📚 Book Sales & Inventory Analysis | SQL + Power BI + Excel
+# 📚 Book Sales & Inventory Analysis | SQL + Power BI + Excel  
+
+## 📌 Project Overview  
+This project analyzes book sales and inventory data to identify pricing trends, stock distribution, genre popularity, and customer behavior.  
+SQL is used for data analysis, Excel is used to store query outputs, and Power BI is used to build an interactive dashboard for insights.  
+
+---
+
+## 🛠 Tools & Technologies Used  
+• SQL  
+• Excel  
+• Power BI  
+• Data Modeling  
+• DAX  
+• Data Visualization  
+
+---
+
 
 ## 🗄️ Database Setup
 
