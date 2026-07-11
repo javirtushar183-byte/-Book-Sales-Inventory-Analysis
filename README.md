@@ -327,6 +327,6 @@ GROUP BY b.book_id, b.title, b.stock;
 ---
 ## 📊 Book Sales & Inventory Analysis
 
-![Book Performance Dashboard](https://github.com/user-attachments/assets/9546f703-e487-497d-8c11-8755067f8efe)
+<img width="1312" height="737" alt="Book Performance Dashboard" src="https://github.com/user-attachments/assets/92e82f97-5062-4a12-86ab-bb07be63692c" />
 
 ---
