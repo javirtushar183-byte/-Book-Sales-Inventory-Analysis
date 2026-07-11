@@ -228,9 +228,10 @@ JOIN book b ON b.book_id = o.book_id
 GROUP BY b.genre;
 ```
 **Output:** 
-<img width="250" height="265" alt="image" src="https://github.com/user-attachments/assets/5a6ca1dd-36c1-4eb6-b14b-9a53932bf870" />
+<img width="161" height="193" alt="image" src="https://github.com/user-attachments/assets/2c944553-7570-4c3c-b08f-58fcb7b37080" />
 
 ---
+
 
 ### 🔹 Q18. Most Popular Author
 ```sql
