@@ -26,7 +26,7 @@ SELECT * FROM customers;
 SELECT * FROM orders;
 📊 SQL Analysis & Business Requests
 ##1️⃣ Retrieve All Fiction Books
-
+```sql
 Business Request:
 Identify all books that belong to the Fiction genre.
 
@@ -39,7 +39,7 @@ Output:
 
 
 ##2️⃣ Books Published After 1950
-
+```sql
 Business Request:
 Retrieve books published after 1950 to analyze modern literature trends.
 
@@ -52,7 +52,7 @@ Output:
 
 
 ##3️⃣ Customers from Canada
-
+```sql
 Business Request:
 Identify customers located in Canada.
 
@@ -65,7 +65,7 @@ Output:
 
 
 ##4️⃣ Orders in November 2023
-
+```sql
 Business Request:
 Analyze orders placed within November 2023.
 
@@ -79,7 +79,7 @@ Output:
 
 
 ##5️⃣ Total Book Stock
-
+```sql
 Business Request:
 Calculate total inventory across all books.
 
@@ -93,7 +93,7 @@ total_stock
 
 
 ##6️⃣ Most Expensive Book
-
+```sql
 Business Request:
 Identify the highest priced book.
 
@@ -107,7 +107,7 @@ Output:
 
 
 ##7️⃣ Orders with Quantity > 1
-
+```sql
 Business Request:
 Find bulk purchase orders.
 
@@ -120,7 +120,7 @@ Output:
 
 
 ##8️⃣ Orders with Amount > 200
-
+```sql
 Business Request:
 Identify high-value transactions.
 
@@ -136,7 +136,7 @@ Output:
 
 
 ##9️⃣ Unique Genres
-
+```sql
 Business Request:
 List all available book genres.
 
@@ -150,7 +150,7 @@ Output:
 
 
 ##🔟 Book with Lowest Stock
-
+```sql
 Business Request:
 Identify books with lowest inventory.
 
@@ -170,7 +170,7 @@ Insight:
 This book is out of stock and requires immediate restocking.
 
 ##1️⃣1️⃣ Total Revenue
-
+```sql
 Business Request:
 Calculate total revenue generated from all orders.
 
@@ -185,7 +185,7 @@ revenue
 
 
 ##1️⃣2️⃣ Books Sold per Genre
-
+```sql
 Business Request:
 Analyze sales distribution by genre.
 
@@ -202,7 +202,7 @@ Output:
 
 
 ##1️⃣3️⃣ Average Fantasy Price
-
+```sql
 Business Request:
 Find average price of Fantasy books.
 
@@ -215,7 +215,7 @@ avg_price
   25.98
 
 ##1️⃣4️⃣ Repeat Customers
-
+```sql
 Business Request:
 Identify customers with multiple orders.
 
@@ -232,7 +232,7 @@ Output:
 
 
 ##1️⃣5️⃣ Top 5 Most Ordered Books
-
+```sql
 Business Request:
 Find best-selling books.
 
@@ -251,7 +251,7 @@ Output:
 
 
 ##1️⃣6️⃣ Top 10 Expensive Fantasy Books
-
+```sql
 Business Request:
 Analyze premium Fantasy books.
 
@@ -268,7 +268,7 @@ Output:
 
 
 ##1️⃣7️⃣ Sales by Author
-
+```sql
 Business Request:
 Evaluate author performance.
 
@@ -286,7 +286,7 @@ Output:
 
 
 ##1️⃣8️⃣ High Spending Cities
-
+```sql
 Business Request:
 Identify cities with total spending above 300.
 
@@ -304,7 +304,7 @@ Output:
 
 
 ##1️⃣9️⃣ Top Spending Customers
-
+```sql
 Business Request:
 Identify highest spending customers.
 
@@ -323,7 +323,7 @@ Output:
 
 
 ##2️⃣0️⃣ Remaining Stock
-
+```sql
 Business Request:
 Calculate remaining inventory after sales.
 
