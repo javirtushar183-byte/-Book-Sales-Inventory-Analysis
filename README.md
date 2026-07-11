@@ -327,7 +327,8 @@ GROUP BY b.book_id, b.title, b.stock;
 ---
 ## 📊 Book Sales & Inventory Analysis
 
-<img width="1311" height="737" alt="Book Anlysis Dashboard " src="https://github.com/user-attachments/assets/b74e6059-9607-49a3-aac9-ea8658f3b8f3" />
+<img width="1312" height="736" alt="Books Anlysis Dashborad" src="https://github.com/user-attachments/assets/26935eee-fb09-4c3a-8213-d8e8757ca10b" />
+
 
 
 ---
