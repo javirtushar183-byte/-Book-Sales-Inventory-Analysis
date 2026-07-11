@@ -265,6 +265,8 @@ ORDER BY total_spent DESC
 LIMIT 5;
 ```
 **Output:** 
-<img width="445" height="265" alt="image" src="https://github.com/user-attachments/assets/4006f3c1-518a-4ac8-843e-e07bc238ae86" />
+<img width="809" height="265" alt="image" src="https://github.com/user-attachments/assets/30e184eb-555b-429c-a666-d361e1ce261a" />
 
 ---
+
+
