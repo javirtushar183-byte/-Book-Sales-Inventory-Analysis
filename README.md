@@ -202,7 +202,8 @@ ORDER BY total_sold DESC
 LIMIT 5;
 ```
 **Output:** 
-<img width="562" height="145" alt="image" src="https://github.com/user-attachments/assets/9a656984-d4f3-46af-85ac-4e682161db56" />
+<img width="474" height="145" alt="image" src="https://github.com/user-attachments/assets/d3ffdbef-b1e1-4dc4-9ba6-2e8a37b88711" />
+
 
 ---
 
