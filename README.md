@@ -243,7 +243,7 @@ ORDER BY books_sold DESC
 LIMIT 1;
 ```
 **Output:** 
-<img width="376" height="265" alt="image" src="https://github.com/user-attachments/assets/24a950d6-280d-43d9-83a1-8f6cbb29c5b7" />
+<img width="229" height="49" alt="image" src="https://github.com/user-attachments/assets/e66a553c-f871-4c3f-8251-c8e7f7577a59" />
 
 
 ---
@@ -256,7 +256,8 @@ GROUP BY month
 ORDER BY month;
 ```
 **Output:**
-<img width="330" height="265" alt="image" src="https://github.com/user-attachments/assets/2aa0a919-a2b7-4acb-b219-f11f01229786" />
+<img width="161" height="313" alt="image" src="https://github.com/user-attachments/assets/653d8b68-7889-4958-bc14-8c20be483988" />
+
 
 ---
 
@@ -270,7 +271,9 @@ ORDER BY total_spent DESC
 LIMIT 5;
 ```
 **Output:** 
-<img width="809" height="265" alt="image" src="https://github.com/user-attachments/assets/30e184eb-555b-429c-a666-d361e1ce261a" />
+<img width="247" height="145" alt="image" src="https://github.com/user-attachments/assets/1db5794f-aceb-4e61-8e10-96a5b60dc0ed" />
+
+
 
 ---
 
