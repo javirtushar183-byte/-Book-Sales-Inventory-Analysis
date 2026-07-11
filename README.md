@@ -175,13 +175,14 @@ WHERE genre = 'Fantasy';
 ```
 **Output:** 
  avg_price
+ 
 25.98169014
 
 ---
 
 ### 🔹 Q14. Customers with Multiple Orders
 ```sql
-SELECT customer_id  
+SELECT customer_id,quantity
 FROM orders  
 GROUP BY customer_id  
 HAVING COUNT(order_id) >= 2;
