@@ -34,6 +34,9 @@ SELECT * FROM orders;
 
 ### 🔹 Q1. Retrieve All Fiction Books
 
+**Business Request:** 
+Identify all books in the Fiction genre.
+
 ```sql
 SELECT * FROM book 
 WHERE genre = 'Fiction';
@@ -46,6 +49,9 @@ WHERE genre = 'Fiction';
 ---
 
 ### 🔹 Q2. Books Published After 1950
+
+**Business Request:** 
+Analyze modern books published after 1950.
 
 ```sql
 SELECT * FROM book 
@@ -60,6 +66,9 @@ ORDER BY published_year;
 
 ### 🔹 Q3. Customers from Canada
 
+**Business Request:** 
+Identify customers located in Canada.
+
 ```sql
 SELECT * FROM customers 
 WHERE country = 'Canada';
@@ -72,6 +81,9 @@ WHERE country = 'Canada';
 
 ### 🔹 Q4. Orders in November 2023
 
+**Business Request:** 
+Analyze orders placed in November 2023.
+
 ```sql
 SELECT * FROM orders 
 WHERE order_date BETWEEN '2023-11-01' AND '2023-11-30';
@@ -83,6 +95,9 @@ WHERE order_date BETWEEN '2023-11-01' AND '2023-11-30';
 ---
 
 ### 🔹 Q5. Total Book Stock
+
+**Business Request:** 
+Calculate total inventory available.
 
 ```sql
 SELECT SUM(stock) AS total_stock FROM book;
@@ -97,6 +112,9 @@ total_stock
 
 ### 🔹 Q6. Most Expensive Book
 
+**Business Request:** 
+Identify the highest priced book.
+
 ```sql
 SELECT * FROM book 
 ORDER BY price DESC 
@@ -110,6 +128,9 @@ LIMIT 1;
 
 ### 🔹 Q7. Orders with Quantity > 1
 
+**Business Request:** 
+Identify bulk purchase orders.
+
 ```sql
 SELECT * FROM orders 
 WHERE quantity > 1;
@@ -121,6 +142,9 @@ WHERE quantity > 1;
 ---
 
 ### 🔹 Q8. Orders with Amount > 200
+
+**Business Request:** 
+Identify high-value transactions.
 
 ```sql
 SELECT order_date, quantity, total_amount 
@@ -136,6 +160,9 @@ WHERE total_amount > 200;
 
 ### 🔹 Q9. Unique Genres
 
+**Business Request:** 
+List all available genres.
+
 ```sql
 SELECT DISTINCT genre FROM book;
 ```
@@ -145,6 +172,9 @@ SELECT DISTINCT genre FROM book;
 ---
 
 ### 🔹 Q10. Book with Lowest Stock
+
+**Business Request:** 
+Identify books with lowest inventory.
 
 ```sql
 SELECT book_id, title, stock 
@@ -160,6 +190,9 @@ LIMIT 1;
 
 ### 🔹 Q11. Total Revenue
 
+**Business Request:**
+Calculate total revenue generated.
+
 ```sql
 SELECT SUM(total_amount) AS revenue FROM orders;
 ```
@@ -171,6 +204,9 @@ revenue
 ---
 
 ### 🔹 Q12. Books Sold per Genre
+
+**Business Request:**
+Analyze sales distribution by genre.
 
 ```sql
 SELECT b.genre, SUM(o.quantity) AS books_sold  
@@ -185,6 +221,10 @@ GROUP BY b.genre;
 ---
 
 ### 🔹 Q13. Average Price of Fantasy Books
+
+**Business Request:**
+Analyze pricing of Fantasy books.
+
 ```sql
 SELECT AVG(price) 
 FROM book 
@@ -198,6 +238,10 @@ WHERE genre = 'Fantasy';
 ---
 
 ### 🔹 Q14. Customers with Multiple Orders
+
+**Business Request:** 
+Identify repeat customers.
+
 ```sql
 SELECT customer_id,quantity
 FROM orders  
