@@ -371,8 +371,15 @@ GROUP BY b.book_id, b.title, b.stock;
 ---
 ## 📊 Book Sales & Inventory Analysis
 
-<img width="1312" height="736" alt="Books Anlysis Dashborad" src="https://github.com/user-attachments/assets/26935eee-fb09-4c3a-8213-d8e8757ca10b" />
+##OverViwe
+<img width="1122" height="632" alt="dashboard-1" src="https://github.com/user-attachments/assets/df532ba2-0709-473a-8d69-745576757ef4" />
 
 
+##Sales
+<img width="1122" height="630" alt="dashboard-2" src="https://github.com/user-attachments/assets/3dbe4010-ebfe-4a64-90ee-402fcd3ddcc2" />
+
+
+##Customers
+<img width="1122" height="631" alt="dashboard-3" src="https://github.com/user-attachments/assets/d1469e1f-3e2f-453d-a089-7e90d26fe581" />
 
 ---
