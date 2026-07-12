@@ -385,7 +385,7 @@ GROUP BY b.book_id, b.title, b.stock;
 
 ---
 
-## 👥 Customer Insights
+## 👥 Customer Info
 
 ![Customer Dashboard](https://github.com/user-attachments/assets/d1469e1f-3e2f-453d-a089-7e90d26fe581)
 
